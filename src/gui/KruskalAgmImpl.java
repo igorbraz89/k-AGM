@@ -31,24 +31,12 @@ public class KruskalAgmImpl {
 		for (Aresta aresta : listaArestas) {
 			int conjuntoV0 = aresta.getV0().getConjunto();
 			int conjuntoV1 = aresta.getV1().getConjunto();
-			if (!(findCiclo(aresta))) {
 				if (conjuntoV0 != conjuntoV1) {
 					aresta.getV1().setConjunto(conjuntoV0);
 					novaListArestas.add(aresta);
 				}
-			}
 		}
 
 		return novaListArestas;
 	}
-
-	private boolean findCiclo(Aresta aresta) {
-		boolean ciclo = false;
-		if (aresta.getV0().isVisitado() && aresta.getV1().isVisitado()) {
-			ciclo = true;
-		}
-
-		return false;
-	}
-
 }
