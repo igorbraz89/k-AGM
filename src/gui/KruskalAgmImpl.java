@@ -26,7 +26,7 @@ public class KruskalAgmImpl {
 
 	private List<Aresta> retrieveArvGeradoraMin(List<Aresta> listaArestas,
 			List<Vertice> listaVertices) {
-		List<Aresta> listArestas = new ArrayList<Aresta>();
+		List<Aresta> NovaListArestas = new ArrayList<Aresta>();
 
 		for (Aresta aresta : listaArestas) {
 			int conjuntoV0 = aresta.getV0().getConjunto();
@@ -34,12 +34,12 @@ public class KruskalAgmImpl {
 			if (!(findCiclo(aresta))) {
 				if (conjuntoV0 != conjuntoV1) {
 					aresta.getV1().setConjunto(conjuntoV0);
-					listArestas.add(aresta);
+					NovaListArestas.add(aresta);
 				}
 			}
 		}
 
-		return null;
+		return NovaListArestas;
 	}
 
 	private boolean findCiclo(Aresta aresta) {
