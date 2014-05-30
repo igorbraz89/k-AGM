@@ -16,7 +16,6 @@ public class KruskalAgmImpl {
 		List<Vertice> listaVertices = gf.getListaVertices();
 		Collections.sort(listaArestas, new ArestaComparator());
 		int conj = 1;
-		// Atribuo um valor a cada vertice que representa o conjunto ao qual ele
 		for (Vertice vertice : listaVertices) {
 			vertice.setConjunto(conj);
 			conj++;
