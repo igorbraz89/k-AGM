@@ -12,6 +12,7 @@ import desenho.Grafo;
 public class KruskalAgmImpl {
 
 	public List<Aresta> getArvGeradoraMin(Grafo gf) {
+
 		List<Aresta> listaArestas = gf.getListaArestas();
 		List<Vertice> listaVertices = gf.getListaVertices();
 		Collections.sort(listaArestas, new ArestaComparator());
@@ -26,29 +27,15 @@ public class KruskalAgmImpl {
 
 	private List<Aresta> retrieveArvGeradoraMin(List<Aresta> listaArestas,
 			List<Vertice> listaVertices) {
-		List<Aresta> NovaListArestas = new ArrayList<Aresta>();
-
+		List<Aresta> novaListArestas = new ArrayList<Aresta>();
 		for (Aresta aresta : listaArestas) {
 			int conjuntoV0 = aresta.getV0().getConjunto();
 			int conjuntoV1 = aresta.getV1().getConjunto();
-			if (!(findCiclo(aresta))) {
 				if (conjuntoV0 != conjuntoV1) {
 					aresta.getV1().setConjunto(conjuntoV0);
-					NovaListArestas.add(aresta);
+					novaListArestas.add(aresta);
 				}
-			}
 		}
-
-		return NovaListArestas;
+		return novaListArestas;
 	}
-
-	private boolean findCiclo(Aresta aresta) {
-		boolean ciclo = false;
-		if (aresta.getV0().isVisitado() && aresta.getV1().isVisitado()) {
-			ciclo = true;
-		}
-
-		return false;
-	}
-
 }

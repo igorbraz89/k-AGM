@@ -9,7 +9,6 @@ import util.Coordenada;
 public class Vertice extends ElementosDoGrafo{
 	private String label;
 	private int conjunto;
-	private boolean visitado;
 	private Coordenada centro;
 	private Shape vert;
 
@@ -38,16 +37,6 @@ public class Vertice extends ElementosDoGrafo{
 	public void setConjunto(int conjunto) {
 		this.conjunto = conjunto;
 	}
-
-	public boolean isVisitado() {
-		return visitado;
-	}
-
-
-	public void setVisitado(boolean visitado) {
-		this.visitado = visitado;
-	}
-
 
 	@Override
 	public String toString() {

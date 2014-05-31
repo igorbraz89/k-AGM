@@ -1,2 +1,16 @@
-.class
+# arquivos gerais
+*target/
+*.swp
+*.swo
+*.swm
+*.swn
+*.pyc
+*.log
+*.log.*
+*surefire*tmp
 *.class
+*.ast
+*.jasper
+bin/basico/Vertice.class
+
+bin/gui/KruskalAgmImpl.class
