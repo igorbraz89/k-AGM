@@ -28,11 +28,16 @@ public class KruskalAgmImpl {
 	private List<Aresta> retrieveArvGeradoraMin(List<Aresta> listaArestas,
 			List<Vertice> listaVertices) {
 		List<Aresta> novaListArestas = new ArrayList<Aresta>();
+
 		for (Aresta aresta : listaArestas) {
 			int conjuntoV0 = aresta.getV0().getConjunto();
 			int conjuntoV1 = aresta.getV1().getConjunto();
 				if (conjuntoV0 != conjuntoV1) {
+					if(conjuntoV0 < conjuntoV1){
 					aresta.getV1().setConjunto(conjuntoV0);
+					}else{
+						aresta.getV0().setConjunto(conjuntoV1);
+					}
 					novaListArestas.add(aresta);
 				}
 		}

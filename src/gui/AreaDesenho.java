@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import util.Coordenada;
@@ -89,9 +90,14 @@ public class AreaDesenho extends JPanel implements MouseListener, MouseMotionLis
 				}
 			}
 			if(parouNumVertice)
-			{Aresta ar = Desenhista.desenhaAresta(v0, v1,
+			{
+				String custo = JOptionPane.showInputDialog(null, "Insira o custo da aresta", "", JOptionPane.INFORMATION_MESSAGE);
+				Aresta ar = Desenhista.desenhaAresta(v0, v1,
 					(Graphics2D) this.getGraphics());
+				ar.setCusto(Double.valueOf(custo));
 			draw.getListaArestas().add(ar);
+			v0 = null;
+			v1=null;
 			}
 			//ar.setOrdem(draw.getListaArestas().size());
 
