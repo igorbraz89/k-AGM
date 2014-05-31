@@ -12,6 +12,7 @@ import desenho.Grafo;
 public class KruskalAgmImpl {
 
 	public List<Aresta> getArvGeradoraMin(Grafo gf) {
+
 		List<Aresta> listaArestas = gf.getListaArestas();
 		List<Vertice> listaVertices = gf.getListaVertices();
 		Collections.sort(listaArestas, new ArestaComparator());

@@ -48,7 +48,11 @@ public class ContadorButton extends JButton implements ActionListener {
 			 g.setListaArestas(listaArestas);
 			 g.setListaVertices(listaVertices);
 			 List<Aresta> listaNova = kr.getArvGeradoraMin(g);
-			 System.out.println(listaNova.size());
+			 double custo = 0;
+			 for (Aresta aresta : listaNova) {
+				custo +=aresta.getCusto();
+			}
+			 System.out.println("Custo da arvore: "+custo+" com N.ar= "+listaNova.size());
 			 
 			 
 		} else {
