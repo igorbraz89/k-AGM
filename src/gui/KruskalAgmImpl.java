@@ -34,13 +34,23 @@ public class KruskalAgmImpl {
 			int conjuntoV1 = aresta.getV1().getConjunto();
 				if (conjuntoV0 != conjuntoV1) {
 					if(conjuntoV0 < conjuntoV1){
-					aresta.getV1().setConjunto(conjuntoV0);
+						unificaVertices(listaVertices,conjuntoV1,conjuntoV0);
 					}else{
-						aresta.getV0().setConjunto(conjuntoV1);
+						unificaVertices(listaVertices,conjuntoV1,conjuntoV0);
 					}
 					novaListArestas.add(aresta);
 				}
 		}
 		return novaListArestas;
+	}
+
+	private void unificaVertices(List<Vertice> listaVertices, int conjuntoV1,
+			int conjuntoV0) {
+			for (Vertice vertice : listaVertices) {
+				if(vertice.getConjunto() == conjuntoV1){
+					vertice.setConjunto(conjuntoV0);
+				}
+			}
+		
 	}
 }
