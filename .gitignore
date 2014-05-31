@@ -14,3 +14,9 @@
 bin/basico/Vertice.class
 
 bin/gui/KruskalAgmImpl.class
+
+*.class
+
+*.class
+
+*.class
